@@ -15,4 +15,5 @@ Plugin for OctoberCMS
 
 * Go to the ${PATH_TO_PROJECT}/plugins/observatby/filesharingoncdn
 * `git pull`
+* Go to the ${PATH_TO_PROJECT}
 * `php artisan plugin:refresh Observatby.FileSharingOnCdn`

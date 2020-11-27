@@ -18,10 +18,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'FileSharingOnCdn',
-            'description' => 'No description provided yet...',
-            'author'      => 'Observatby',
-            'icon'        => 'icon-leaf'
+            'name' => 'FileSharingOnCdn',
+            'description' => 'Temporary file sharing on CDN',
+            'author' => 'Observatby',
+            'homepage'    => 'https://github.com/Observat/FileSharingOnCdn',
+            'icon' => 'icon-leaf'
         ];
     }
 
