@@ -80,11 +80,23 @@ class Plugin extends PluginBase
     {
         return [
             'filesharingoncdn' => [
-                'label' => 'FileSharingOnCdn', # TODO translate?
-                'url' => Backend::url('observatby/filesharingoncdn/filelists'),
+                'label' => 'observatby.filesharingoncdn::lang.menu.filelinks',
+                'url' => Backend::url('observatby/filesharingoncdn/filelinks'),
                 'icon' => 'icon-leaf',
                 'permissions' => ['observatby.filesharingoncdn.*'],
                 'order' => 500,
+                'sideMenu' => [
+                    'new_filelink' => [
+                        'label'       => 'observatby.filesharingoncdn::lang.menu.add_filelink',
+                        'icon'        => 'icon-plus',
+                        'url'         => Backend::url('observatby/filesharingoncdn/filelinks/create'),
+                    ],
+                    'filelinks' => [
+                        'label'       => 'observatby.filesharingoncdn::lang.menu.filelinks',
+                        'icon'        => 'icon-file-image-o',
+                        'url'         => Backend::url('observatby/filesharingoncdn/filelinks'),
+                    ],
+                ],
             ],
         ];
     }
