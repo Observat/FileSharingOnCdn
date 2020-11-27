@@ -21,7 +21,7 @@ class Plugin extends PluginBase
             'name' => 'FileSharingOnCdn',
             'description' => 'Temporary file sharing on CDN',
             'author' => 'Observatby',
-            'homepage'    => 'https://github.com/Observat/FileSharingOnCdn',
+            'homepage' => 'https://github.com/Observat/FileSharingOnCdn',
             'icon' => 'icon-leaf'
         ];
     }
@@ -53,11 +53,7 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
-        return [
-            'Observatby\FileSharingOnCdn\Components\MyComponent' => 'myComponent',
-        ];
+        return [];
     }
 
     /**
@@ -67,8 +63,6 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
             'observatby.filesharingoncdn.some_permission' => [
                 'tab' => 'FileSharingOnCdn',
@@ -84,15 +78,13 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'filesharingoncdn' => [
-                'label'       => 'FileSharingOnCdn',
-                'url'         => Backend::url('observatby/filesharingoncdn/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'label' => 'FileSharingOnCdn', # TODO translate?
+                'url' => Backend::url('observatby/filesharingoncdn/filelists'),
+                'icon' => 'icon-leaf',
                 'permissions' => ['observatby.filesharingoncdn.*'],
-                'order'       => 500,
+                'order' => 500,
             ],
         ];
     }

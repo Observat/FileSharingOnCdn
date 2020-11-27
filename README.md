@@ -9,7 +9,7 @@ Plugin for OctoberCMS
 * `git clone https://github.com/Observat/FileSharingOnCdn`
 * Rename from FileSharingOnCdn to filesharingoncdn
 * May be run `chown -R www-data:www-data ...`
-* `php artisan plugin:refresh Observatby.FileSharingOnCdn`
+* TODO october:up? `php artisan plugin:refresh Observatby.FileSharingOnCdn`
 
 ## Update
 
