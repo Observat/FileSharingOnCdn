@@ -1,4 +1,6 @@
 1.0.1:
-- Initial version.
+  - Initial version.
 1.0.2:
-- create_file_links_table.php
+  - create_file_links_table.php
+1.0.3:
+  - alter_file_links_table.php
