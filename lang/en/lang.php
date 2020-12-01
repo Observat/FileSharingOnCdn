@@ -2,7 +2,7 @@
 
 return [
     'menu' => [
-        'filelinks' => 'Filelinks',
-        'add_filelink' => 'Add filelink',
+        'links' => 'Links',
+        'add_link' => 'Add link',
     ],
 ];

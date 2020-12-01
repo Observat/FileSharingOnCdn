@@ -1,10 +1,10 @@
 # ===================================
-#  Form Field Definitions
+#  List Column Definitions
 # ===================================
 
-fields:
+columns:
     id:
         label: ID
-        disabled: true
-    images:
-        type: fileupload
+        searchable: true
+    description:
+        label: Имя

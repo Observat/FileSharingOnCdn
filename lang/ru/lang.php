@@ -2,7 +2,7 @@
 
 return [
     'menu' => [
-        'filelinks' => 'Файлы CDN',
-        'add_filelink' => 'Add filelink',
+        'links' => 'Файлы CDN',
+        'add_link' => 'Add link',
     ],
 ];

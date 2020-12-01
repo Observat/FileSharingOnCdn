@@ -2,7 +2,7 @@
 
 namespace Observatby\FileSharingOnCdn;
 
-use Backend;
+use Backend\Facades\Backend;
 use System\Classes\PluginBase;
 
 /**
@@ -80,21 +80,21 @@ class Plugin extends PluginBase
     {
         return [
             'filesharingoncdn' => [
-                'label' => 'observatby.filesharingoncdn::lang.menu.filelinks',
-                'url' => Backend::url('observatby/filesharingoncdn/filelinks'),
+                'label' => 'observatby.filesharingoncdn::lang.menu.links',
+                'url' => Backend::url('observatby/filesharingoncdn/links'),
                 'icon' => 'icon-leaf',
                 'permissions' => ['observatby.filesharingoncdn.*'],
                 'order' => 500,
                 'sideMenu' => [
-                    'new_filelink' => [
-                        'label'       => 'observatby.filesharingoncdn::lang.menu.add_filelink',
+                    'new_link' => [
+                        'label'       => 'observatby.filesharingoncdn::lang.menu.add_link',
                         'icon'        => 'icon-plus',
-                        'url'         => Backend::url('observatby/filesharingoncdn/filelinks/create'),
+                        'url'         => Backend::url('observatby/filesharingoncdn/links/create'),
                     ],
-                    'filelinks' => [
-                        'label'       => 'observatby.filesharingoncdn::lang.menu.filelinks',
+                    'links' => [
+                        'label'       => 'observatby.filesharingoncdn::lang.menu.links',
                         'icon'        => 'icon-file-image-o',
-                        'url'         => Backend::url('observatby/filesharingoncdn/filelinks'),
+                        'url'         => Backend::url('observatby/filesharingoncdn/links'),
                     ],
                 ],
             ],
