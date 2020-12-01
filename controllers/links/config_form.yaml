@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Link
+
+# Model Form Field configuration
+form: $/observatby/filesharingoncdn/models/link/fields.yaml
+
+# Model Class name
+modelClass: Observatby\FileSharingOnCdn\Models\Link
+
+# Default redirect location
+defaultRedirect: observatby/filesharingoncdn/links
+
+# Create page
+create:
+    title: Create Link
+    redirect: observatby/filesharingoncdn/links/update/:id
+    redirectClose: observatby/filesharingoncdn/links
+
+# Update page
+update:
+    title: Edit Link
+    redirect: observatby/filesharingoncdn/links
+    redirectClose: observatby/filesharingoncdn/links
+
+# Preview page
+preview:
+    title: Preview Link
