@@ -1,0 +1,28 @@
+{
+    "name": "Observat/FileSharingOnCdn",
+    "description": "Temporary file sharing on CDN",
+    "type": "october-plugin",
+    "homepage": "https://github.com/Observat/FileSharingOnCdn",
+    "keywords": [
+        "october",
+        "cms",
+        "cdn"
+    ],
+    "authors": [
+        {
+            "name": "Обловацкий Юрий",
+            "email": "jury@observat.by",
+            "homepage": "http://observat.by/"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "barantaran/platformcraft": ">=0.4.0"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/MIR24/platformcraft"
+        }
+    ]
+}
