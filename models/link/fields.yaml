@@ -4,21 +4,21 @@
 
 fields:
     description:
-        label: Имя
+        label: Краткое описание
     file:
         label: Файл
         type: fileupload
         mode: file-single
 
+    cdn_url:
+        label: cdn_url
+        readOnly: true
+        disabled: true
     cdn_id:
         label: cdn_id
         readOnly: true
         disabled: true
     cdn_name:
         label: cdn_name
-        readOnly: true
-        disabled: true
-    cdn_url:
-        label: cdn_url
         readOnly: true
         disabled: true

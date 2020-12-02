@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.2",
-        "barantaran/platformcraft": ">=0.4.0"
+        "barantaran/platformcraft": "dev-ST-1279-api-for-disk-mirtv-ru"
     },
     "repositories": [
         {

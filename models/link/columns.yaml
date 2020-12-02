@@ -4,7 +4,7 @@
 
 columns:
     description:
-        label: Имя
+        label: Краткое описание
         searchable: true
     cdn_url:
         label: Файл в CDN

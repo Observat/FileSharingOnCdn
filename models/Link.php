@@ -29,7 +29,10 @@ class Link extends Model
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [];
+    public $rules = [
+        'description' => 'required',
+        'file' => 'required',
+    ];
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
@@ -65,6 +68,6 @@ class Link extends Model
 //    public $attachMany = [];
 
     public $attachOne = [
-        'file' => ['System\Models\File', 'order' => 'sort_order'],
+        'file' => ['System\Models\File', 'public' => false],
     ];
 }
