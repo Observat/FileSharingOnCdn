@@ -63,4 +63,8 @@ class Link extends Model
 //    public $morphMany = [];
 //    public $attachOne = [];
 //    public $attachMany = [];
+
+    public $attachOne = [
+        'file' => ['System\Models\File', 'order' => 'sort_order'],
+    ];
 }

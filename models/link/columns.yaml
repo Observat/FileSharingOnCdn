@@ -3,8 +3,13 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
     description:
         label: Имя
+        searchable: true
+    cdn_url:
+        label: Файл в CDN
+    file:
+        label: Файл локально
+        relation: file
+        valueFrom: path
+        sortable: false
