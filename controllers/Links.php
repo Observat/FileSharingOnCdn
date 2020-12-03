@@ -37,9 +37,6 @@ class Links extends Controller
         BackendMenu::setContext('Observatby.FileSharingOnCdn', 'filesharingoncdn', 'links');
     }
 
-    # TODO public function create_onSave(...$argSave)
-    # TODO public function delete_onSave(...$argSave)
-
     public function update_onSave(...$argSave)
     {
         $linkId = $argSave[0];
@@ -56,6 +53,7 @@ class Links extends Controller
         }
     }
 
+    # TODO Parts duplicated in model Link
     private function updateCdn(Link $model, ?File $newFile)
     {
         $platform = new Platform(
