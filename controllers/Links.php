@@ -37,13 +37,25 @@ class Links extends Controller
         BackendMenu::setContext('Observatby.FileSharingOnCdn', 'filesharingoncdn', 'links');
     }
 
+    public function create_onSave(...$argSave)
+    {
+        $response = parent::create_onSave(...$argSave);
+
+        $links = Link::where('created_at', '>=', (new \DateTimeImmutable("now - 30 seconds"))->format(\DateTimeInterface::ISO8601))->get();
+        foreach ($links as $link) {
+            $link->sendToCdnAfterCreate();
+        }
+
+        return $response;
+    }
+
     public function update_onSave(...$argSave)
     {
         $linkId = $argSave[0];
         $modelBefore = Link::find($linkId);
         $fileBefore = $modelBefore->file;
 
-        parent::update_onSave(...$argSave);
+        $response = parent::update_onSave(...$argSave);
 
         $modelAfter = Link::find($linkId);
         $fileAfter = $modelAfter->file;
@@ -57,6 +69,8 @@ class Links extends Controller
         if ($fileAfter->id !== $fileBefore->id) {
             $this->updateCdn($modelAfter, $fileAfter);
         }
+
+        return $response;
     }
 
     # TODO Parts duplicated in model Link

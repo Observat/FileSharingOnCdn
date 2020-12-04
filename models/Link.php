@@ -63,10 +63,8 @@ class Link extends Model
     ];
 
 
-    protected function afterCreate()
+    public function sendToCdnAfterCreate()
     {
-        parent::afterCreate();
-        # TODO $this->file is null always
         if ($this->addToCdn($this->getPlatformcraftClient())) {
             $this->save();
         }
