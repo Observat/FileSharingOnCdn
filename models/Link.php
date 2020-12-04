@@ -2,6 +2,7 @@
 
 use Model;
 use Barantaran\Platformcraft\Platform;
+use October\Rain\Database\Traits\Validation;
 use October\Rain\Support\Facades\Config;
 
 /**
@@ -9,7 +10,7 @@ use October\Rain\Support\Facades\Config;
  */
 class Link extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use Validation;
 
     /**
      * @var string The database table used by the model.
@@ -54,21 +55,9 @@ class Link extends Model
         'updated_at'
     ];
 
-//    /**
-//     * @var array Relations
-//     */
-//    public $hasOne = [];
-//    public $hasMany = [];
-//    public $hasOneThrough = [];
-//    public $hasManyThrough = [];
-//    public $belongsTo = [];
-//    public $belongsToMany = [];
-//    public $morphTo = [];
-//    public $morphOne = [];
-//    public $morphMany = [];
-//    public $attachOne = [];
-//    public $attachMany = [];
-
+    /**
+     * @var array Relations
+     */
     public $attachOne = [
         'file' => ['System\Models\File', 'public' => false],
     ];
@@ -105,7 +94,6 @@ class Link extends Model
             $fileUploadResult = $platform->addFile($this->file->getLocalPath());
             if ($fileUploadResult) {
                 $this->cdn_id = $fileUploadResult['id'];
-                $this->cdn_name = $fileUploadResult['name'];
                 $this->cdn_url = $fileUploadResult['cdn_url'];
                 return true;
             }
@@ -119,7 +107,6 @@ class Link extends Model
         $deleteResponse = $platform->deleteObject($this->cdn_id);
         if ($deleteResponse) {
             $this->cdn_id = null;
-            $this->cdn_name = null;
             $this->cdn_url = null;
             return true;
         }

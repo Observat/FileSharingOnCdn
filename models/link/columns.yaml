@@ -8,8 +8,5 @@ columns:
         searchable: true
     cdn_url:
         label: Файл в CDN
-    file:
-        label: Файл локально
-        relation: file
-        valueFrom: path
-        sortable: false
+    updated_at:
+        label: Обновлено

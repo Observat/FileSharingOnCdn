@@ -18,7 +18,3 @@ fields:
         label: cdn_id
         readOnly: true
         disabled: true
-    cdn_name:
-        label: cdn_name
-        readOnly: true
-        disabled: true

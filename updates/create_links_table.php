@@ -1,8 +1,8 @@
 <?php namespace Observatby\FileSharingOnCdn\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateLinksTable extends Migration
 {
@@ -13,9 +13,7 @@ class CreateLinksTable extends Migration
             $table->increments('id');
             $table->string('description')->nullable();
             $table->string('cdn_id')->nullable();
-            $table->string('cdn_name')->nullable();
             $table->string('cdn_url')->nullable();
-            $table->timestamp('cdn_deleted_at')->nullable();
             $table->timestamps();
         });
     }

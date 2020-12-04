@@ -64,7 +64,6 @@ class Links extends Controller
         $deleteResponse = $platform->deleteObject($model->cdn_id);
         if ($deleteResponse) {
             $model->cdn_id = null;
-            $model->cdn_name = null;
             $model->cdn_url = null;
             $model->save();
         }
@@ -73,7 +72,6 @@ class Links extends Controller
             $fileUploadResult = $platform->addFile($newFile->getLocalPath());
             if ($fileUploadResult) {
                 $model->cdn_id = $fileUploadResult['id'];
-                $model->cdn_name = $fileUploadResult['name'];
                 $model->cdn_url = $fileUploadResult['cdn_url'];
                 $model->save();
             }
