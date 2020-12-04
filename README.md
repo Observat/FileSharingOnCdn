@@ -13,6 +13,8 @@ Plugin for OctoberCMS
 * `composer update`
 * `php artisan october:up` or `php artisan plugin:refresh Observatby.FileSharingOnCdn`.
  Command `plugin:refresh` recreate database tables of this plugin with truncating data!
+* Add Cron entry: `* * * * * php ${PATH_TO_PROJECT} schedule:run >> /dev/null 2>&1`.
+  Can use `0 */1 * * * php ${PATH_TO_PROJECT} schedule:run >> /dev/null 2>&1`
 
 ## Update
 

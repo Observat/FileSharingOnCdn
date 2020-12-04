@@ -37,14 +37,9 @@ class Plugin extends PluginBase
         $this->registerConsoleCommand('filesharingoncdn:deleteoldfiles', DeleteOldFiles::class);
     }
 
-    /**
-     * Boot method, called right before the request route.
-     *
-     * @return array
-     */
-    public function boot()
+    public function registerSchedule($schedule)
     {
-
+        $schedule->command('filesharingoncdn:deleteoldfiles', ['days' => 15])->daily();
     }
 
     /**
