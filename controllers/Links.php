@@ -48,6 +48,12 @@ class Links extends Controller
         $modelAfter = Link::find($linkId);
         $fileAfter = $modelAfter->file;
 
+        # TODO Fix saving after creating Link and delete this
+        if ($modelAfter->cdn_url === null) {
+            $this->updateCdn($modelAfter, $fileAfter);
+        }
+        # delete before this
+
         if ($fileAfter->id !== $fileBefore->id) {
             $this->updateCdn($modelAfter, $fileAfter);
         }
