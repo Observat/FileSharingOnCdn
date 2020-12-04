@@ -3,6 +3,7 @@
 use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
 use Barantaran\Platformcraft\Platform;
+use Illuminate\Support\Facades\Redirect;
 use Observatby\FileSharingOnCdn\Models\Link;
 use October\Rain\Support\Facades\Config;
 use System\Models\File;
@@ -60,17 +61,11 @@ class Links extends Controller
         $modelAfter = Link::find($linkId);
         $fileAfter = $modelAfter->file;
 
-        # TODO Fix saving after creating Link and delete this
-        if ($modelAfter->cdn_url === null) {
-            $this->updateCdn($modelAfter, $fileAfter);
-        }
-        # delete before this
-
         if ($fileAfter->id !== $fileBefore->id) {
             $this->updateCdn($modelAfter, $fileAfter);
         }
 
-        return $response;
+        return $response ?: Redirect::refresh();
     }
 
     # TODO Parts duplicated in model Link
