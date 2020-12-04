@@ -3,6 +3,7 @@
 namespace Observatby\FileSharingOnCdn;
 
 use Backend\Facades\Backend;
+use Observatby\FileSharingOnCdn\Console\DeleteOldFiles;
 use System\Classes\PluginBase;
 
 /**
@@ -33,7 +34,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
+        $this->registerConsoleCommand('filesharingoncdn:deleteoldfiles', DeleteOldFiles::class);
     }
 
     /**
